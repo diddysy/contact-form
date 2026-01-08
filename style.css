@@ -1,0 +1,158 @@
+:root {
+  --green-200: hsl(148, 38%, 91%);
+  --green-600: hsl(169, 82%, 27%);
+  --red: hsl(0, 66%, 54%);
+  --white: hsl(0, 0%, 100%);
+  --grey-500: hsl(186, 15%, 59%);
+  --grey-900: hsl(187, 24%, 22%);
+  --font-size-base: 1em; /* 16px default */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Karla', sans-serif;
+  font-size: var(--font-size-base);
+  background-color: var(--green-200);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: var(--grey-900);
+}
+
+.form-container {
+  background-color: var(--white);
+  border-radius: 1em;
+  padding: 2em;
+  max-width: 90%;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 90em) { /* 1440px */
+  .form-container {
+    max-width: 40em;
+  }
+}
+
+.form-title {
+  font-size: 2em;
+  font-weight: 700;
+  margin: 0 0 1.5em;
+  color: var(--grey-900);
+}
+
+label {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--grey-900);
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.75em;
+  border: 0.0625em solid var(--grey-500);
+  border-radius: 0.5em;
+  font-size: var(--font-size-base);
+  color: var(--grey-900);
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: 0.125em solid var(--green-600);
+}
+
+input:invalid,
+textarea:invalid {
+  border-color: var(--red);
+}
+
+.required {
+  color: var(--red);
+}
+
+.name-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-bottom: 1.5em;
+}
+
+@media (min-width: 90em) {
+  .name-fields {
+    flex-direction: row;
+  }
+
+  .name-fields .field-group {
+    flex: 1;
+  }
+}
+
+.field-group {
+  margin-bottom: 1.5em;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.query-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+@media (min-width: 90em) {
+  .query-options {
+    flex-direction: row;
+  }
+}
+
+.radio-label,
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  border: 0.0625em solid var(--grey-500);
+  border-radius: 0.5em;
+  padding: 0.75em;
+  cursor: pointer;
+  font-weight: 400;
+  color: var(--grey-900);
+}
+
+.radio-label input,
+.checkbox-label input {
+  margin-right: 0.75em;
+}
+
+.radio-label:hover,
+.checkbox-label:hover {
+  border-color: var(--green-600);
+}
+
+.checkbox-group {
+  margin-bottom: 2em;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.75em;
+  background-color: var(--green-600);
+  color: var(--white);
+  border: none;
+  border-radius: 0.5em;
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: var(--grey-900);
+}
